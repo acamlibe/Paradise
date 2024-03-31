@@ -5,7 +5,19 @@ import scala.io.StdIn.readLine
 
 def gameLoop(): Unit = {
   val input = getInput()
-} 
+
+  input match {
+    case "help" => printHelp()
+    case "quit" => System.exit(0)
+    case _ => println("Unknown command. Try 'help' for a list of commands.")
+  }
+
+  gameLoop()
+}
+
+def printHelp(): Unit = {
+  println("Help menu...")
+}
 
 def getInput(): String =
   print("> ")
